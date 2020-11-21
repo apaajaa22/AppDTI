@@ -7,7 +7,7 @@ import {colors} from '../../utils';
 const Transfer = ({navigation}) => {
   return (
     <View style={styles.content}>
-      <Header title="Transfer" />
+      <Header onPress={() => navigation.goBack()} title="Transfer" />
       <View style={styles.page}>
         <Gap height={80} />
         <ILTransfer />

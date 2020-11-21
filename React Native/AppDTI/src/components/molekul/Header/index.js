@@ -4,10 +4,10 @@ import {fonts} from '../../../utils';
 import {colors} from '../../../utils/colors';
 import {Button, Gap} from '../../atoms';
 
-const Header = ({title, navigation}) => {
+const Header = ({title, navigation, onPress}) => {
   return (
     <View style={styles.container}>
-      <Button type="icon-only" icon="back-dark" />
+      <Button type="icon-only" icon="back-dark" onPress={onPress} />
       <Text style={styles.text}>{title}</Text>
       <Gap width={24} />
     </View>
