@@ -3,11 +3,16 @@ import {StyleSheet, Text, View} from 'react-native';
 import {TextInput} from 'react-native-gesture-handler';
 import {colors} from '../../../utils/colors';
 
-const Input = ({label}) => {
+const Input = ({label, value, onChangeText, secureTextEntry}) => {
   return (
     <View>
       <Text style={styles.label}>{label}</Text>
-      <TextInput style={styles.input} />
+      <TextInput
+        style={styles.input}
+        value={value}
+        onChangeText={onChangeText}
+        secureTextEntry={secureTextEntry}
+      />
     </View>
   );
 };

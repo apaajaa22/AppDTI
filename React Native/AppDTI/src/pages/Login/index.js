@@ -1,5 +1,11 @@
 import React from 'react';
-import {StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import {
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from 'react-native';
 import {ILLogo} from '../../assets';
 import {Button, Gap, Input, Link} from '../../components';
 import {colors, fonts} from '../../utils';
@@ -7,19 +13,21 @@ import {colors, fonts} from '../../utils';
 const Login = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <ILLogo />
-      <Text style={styles.title}>Masuk</Text>
-      <Input label="Email" />
-      <Gap height={24} />
-      <Input label="Password" />
-      <Gap height={10} />
-      <Link title="Forgot Password" size={12} />
-      <Gap height={40} />
-      <Button title="Sign In" onPress={() => navigation.replace('MainApp')} />
-      <Gap height={30} />
-      <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-        <Link title="Create New Account" size={16} align="center" />
-      </TouchableOpacity>
+      <ScrollView showsVerticalScrollIndicator={false}>
+        <ILLogo />
+        <Text style={styles.title}>Masuk</Text>
+        <Input label="Email" />
+        <Gap height={24} />
+        <Input label="Password" />
+        <Gap height={10} />
+        <Link title="Forgot Password" size={12} />
+        <Gap height={40} />
+        <Button title="Sign In" onPress={() => navigation.replace('MainApp')} />
+        <Gap height={30} />
+        <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+          <Link title="Create New Account" size={16} align="center" />
+        </TouchableOpacity>
+      </ScrollView>
     </View>
   );
 };
