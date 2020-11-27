@@ -1,12 +1,13 @@
 import React from 'react';
-import {Image, StyleSheet, Text, View} from 'react-native';
+import {Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
 import {IconAddPhoto, ILNullPhoto} from '../../assets';
 import {Button, Gap, Header, Link} from '../../components';
 import {colors, fonts} from '../../utils';
-const UploadPhoto = () => {
+
+const UploadPhoto = ({navigation}) => {
   return (
     <View style={styles.page}>
-      <Header title="Upload Photo" />
+      <Header onPress={() => navigation.goBack()} title="Upload Photo" />
       <View style={styles.content}>
         <View style={styles.profile}>
           <View style={styles.border}>
@@ -19,7 +20,9 @@ const UploadPhoto = () => {
         <View>
           <Button title="Upload and Continue" />
           <Gap height={30} />
-          <Link title="Skip for this" align="center" size={16} />
+          <TouchableOpacity onPress={() => navigation.navigate('MainApp')}>
+            <Link title="Skip for this" align="center" size={16} />
+          </TouchableOpacity>
         </View>
       </View>
     </View>

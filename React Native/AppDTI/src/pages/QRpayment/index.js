@@ -7,7 +7,7 @@ import {colors, fonts} from '../../utils';
 const QRpayment = ({navigation}) => {
   return (
     <View>
-      <Header title="QR Payment" />
+      <Header onPress={() => navigation.goBack()} title="QR Payment" />
       <View>
         <View style={styles.button}>
           <Gap height={20} />

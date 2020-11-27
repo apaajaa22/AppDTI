@@ -3,16 +3,16 @@ import {StyleSheet, Text, View} from 'react-native';
 import {IconTransfer2} from '../../../assets';
 import {colors} from '../../../utils';
 
-const ListHistory = () => {
+const ListHistory = ({prc, telp, date}) => {
   return (
     <View style={styles.page}>
       <IconTransfer2 />
       <View style={styles.text}>
-        <Text>Rp. 80.000</Text>
-        <Text>Transfer ke 082218329375</Text>
+        <Text>Rp.{prc}</Text>
+        <Text>Transfer ke {telp}</Text>
       </View>
       <View>
-        <Text>20/08/2020</Text>
+        <Text>{date}</Text>
       </View>
     </View>
   );
@@ -37,7 +37,6 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.3,
     shadowRadius: 4.65,
-
     elevation: 8,
   },
   text: {marginLeft: -50},

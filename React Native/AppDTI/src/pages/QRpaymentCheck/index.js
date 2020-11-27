@@ -7,7 +7,7 @@ import {colors, fonts} from '../../utils';
 const QRpaymentCheck = ({navigation}) => {
   return (
     <View>
-      <Header title="Konfirmasi Bayar" />
+      <Header onPress={() => navigation.goBack()} title="Konfirmasi Bayar" />
       <View style={styles.page}>
         <Gap height={20} />
         <ILBayar />

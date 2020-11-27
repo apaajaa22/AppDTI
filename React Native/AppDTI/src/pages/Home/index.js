@@ -1,6 +1,7 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {
   ImageBackground,
+  ScrollView,
   StyleSheet,
   Text,
   TouchableOpacity,
@@ -14,6 +15,7 @@ import {
   TransaksiTerakhir,
 } from '../../components/molekul';
 import {colors, fonts} from '../../utils';
+import {JSONItemPrice} from '../../assets';
 
 const Home = ({navigation}) => {
   return (
@@ -41,11 +43,20 @@ const Home = ({navigation}) => {
       <Text style={{marginTop: 38, marginBottom: 8, paddingHorizontal: 20}}>
         Transaksi Terakhir Anda
       </Text>
-      <View style={{paddingHorizontal: 20}}>
-        <ListHistory />
-        <ListHistory />
-        <ListHistory />
-      </View>
+      <ScrollView showsVerticalScrollIndicator={false} style={styles.scroll}>
+        <View style={{paddingHorizontal: 20}}>
+          {JSONItemPrice.data.map((item) => {
+            return (
+              <ListHistory
+                key={item.id}
+                prc={item.prc}
+                telp={item.telp}
+                date={item.date}
+              />
+            );
+          })}
+        </View>
+      </ScrollView>
     </View>
   );
 };
@@ -77,4 +88,5 @@ const styles = StyleSheet.create({
   },
   text: {fontFamily: fonts.primary[600], fontSize: 14, paddingTop: 5},
   uang: {fontSize: 36, fontFamily: fonts.primary[600]},
+  scroll: {marginTop: 15},
 });
